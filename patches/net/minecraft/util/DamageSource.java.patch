@@ -1,6 +1,17 @@
 --- ../src-base/minecraft/net/minecraft/util/DamageSource.java
 +++ ../src-work/minecraft/net/minecraft/util/DamageSource.java
-@@ -50,6 +50,12 @@
+@@ -1,8 +1,10 @@
+ package net.minecraft.util;
+ 
+ import javax.annotation.Nullable;
++import cn.topologycraft.uhc.util.EntityWolfDamageSource;
+ import net.minecraft.entity.Entity;
+ import net.minecraft.entity.EntityLivingBase;
++import net.minecraft.entity.passive.EntityWolf;
+ import net.minecraft.entity.player.EntityPlayer;
+ import net.minecraft.entity.projectile.EntityArrow;
+ import net.minecraft.entity.projectile.EntityFireball;
+@@ -50,11 +52,23 @@
          return new EntityDamageSource("mob", p_76358_0_);
      }
  
@@ -13,3 +24,14 @@
      public static DamageSource func_188403_a(Entity p_188403_0_, EntityLivingBase p_188403_1_)
      {
          return new EntityDamageSourceIndirect("mob", p_188403_0_, p_188403_1_);
+     }
+ 
++    // TC Plugin
++    public static DamageSource causeWolfDamage(EntityWolf mob)
++    {
++        return new EntityWolfDamageSource("wolf", mob);
++    }
++
+     public static DamageSource func_76365_a(EntityPlayer p_76365_0_)
+     {
+         return new EntityDamageSource("player", p_76365_0_);

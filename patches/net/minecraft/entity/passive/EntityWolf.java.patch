@@ -1,0 +1,12 @@
+--- ../src-base/minecraft/net/minecraft/entity/passive/EntityWolf.java
++++ ../src-work/minecraft/net/minecraft/entity/passive/EntityWolf.java
+@@ -313,7 +313,8 @@
+ 
+     public boolean func_70652_k(Entity p_70652_1_)
+     {
+-        boolean flag = p_70652_1_.func_70097_a(DamageSource.func_76358_a(this), (float)((int)this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e()));
++        // TC Plugin: use separated wolf damage source
++        boolean flag = p_70652_1_.func_70097_a(DamageSource.causeWolfDamage(this), (float)((int)this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e()));
+ 
+         if (flag)
+         {
